@@ -1,0 +1,45 @@
+// src/App.tsx
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import Feed from './components/Feed';
+import Explore from './pages/Explore';
+import Learn from './pages/learn';
+import Donate from './pages/donate';
+import Messages from './pages/Messages';
+import Careers from './pages/careers';
+import AdminPanel from './pages/AdminPanel';
+
+interface Post {
+  content?: string;
+  media?: {
+    type: 'image' | 'video';
+    src: string;
+  };
+  timestamp?: string;
+}
+
+const App: React.FC = () => {
+  const [posts, setPosts] = useState<Post[]>([]);
+
+  const handleCreatePost = (newPost: Post) => {
+    setPosts((prevPosts) => [newPost, ...prevPosts]);
+  };
+
+  return (
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Feed posts={posts} />} />
+        <Route path="/explore" element={<Explore />} />
+		<Route path="/learn" element={<Learn />} /> 
+		<Route path="/donate" element={<Donate />} /> 
+		<Route path="/messages" element={<Messages />} />
+		<Route path="/careers" element={<Careers />} /> 
+        <Route path="/admin" element={<AdminPanel onCreatePost={handleCreatePost} posts={posts} />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;
