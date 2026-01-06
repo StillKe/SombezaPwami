@@ -24,6 +24,13 @@ interface Props {
   onCreatePost: (post: Post) => void;
 }
 
+// Helper to safely parse mediaType
+const parseMediaType = (value: any): 'image' | 'video' | undefined => {
+  if (value === 'video') return 'video';
+  if (value === 'image') return 'image';
+  return undefined;
+};
+
 const QuestionBuilder: React.FC<Props> = ({ onCreatePost }) => {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [postText, setPostText] = useState('');
@@ -129,7 +136,17 @@ const QuestionBuilder: React.FC<Props> = ({ onCreatePost }) => {
       const content = event.target?.result as string;
       try {
         const imported = JSON.parse(content);
-        if (Array.isArray(imported)) setQuestions(imported);
+        if (Array.isArray(imported)) {
+          setQuestions(
+            imported.map((q: any) => ({
+              question: q.question,
+              options: q.options || [],
+              correctAnswer: q.correctAnswer || 0,
+              media: q.media || undefined,
+              mediaType: parseMediaType(q.mediaType),
+            }))
+          );
+        }
       } catch {
         alert('Invalid JSON format.');
       }
@@ -173,8 +190,8 @@ const QuestionBuilder: React.FC<Props> = ({ onCreatePost }) => {
             question: row.question,
             options: [row.option1, row.option2, row.option3, row.option4],
             correctAnswer: parseInt(row.correctAnswer, 10),
-            media: row.media || '',
-            mediaType: (row.mediaType === 'video' ? 'video' : 'image') as 'image' | 'video'
+            media: row.media || undefined,
+            mediaType: parseMediaType(row.mediaType)
           }));
           setQuestions(parsed);
         } catch {
