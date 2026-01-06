@@ -1,7 +1,7 @@
 // src/App.tsx
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import NavBar from './components/NavBar';
 import Feed from './components/Feed';
 import Explore from './pages/Explore';
 import Learn from './pages/learn';
