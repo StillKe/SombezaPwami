@@ -31,6 +31,7 @@ const QuestionBuilder: React.FC<Props> = ({ onCreatePost }) => {
   const [pendingPosts, setPendingPosts] = useState<Post[]>([]);
   const [editPostId, setEditPostId] = useState<number | null>(null);
 
+  // Post Media Upload
   const handlePostMediaUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -43,14 +44,16 @@ const QuestionBuilder: React.FC<Props> = ({ onCreatePost }) => {
     reader.readAsDataURL(file);
   };
 
+  // Create/Edit Pending Post
   const handleCreateOrEditPost = () => {
     if (!postText && !postMedia) {
       alert('Post must have text or media.');
       return;
     }
     if (editPostId !== null) {
-      // edit existing pending post
-      setPendingPosts(prev => prev.map(p => p.id === editPostId ? { ...p, content: postText, media: postMedia || undefined } : p));
+      setPendingPosts(prev =>
+        prev.map(p => p.id === editPostId ? { ...p, content: postText, media: postMedia || undefined } : p)
+      );
       setEditPostId(null);
     } else {
       const newPost: Post = {
@@ -89,7 +92,7 @@ const QuestionBuilder: React.FC<Props> = ({ onCreatePost }) => {
     setPendingPosts(prev => prev.filter(p => p.id !== id));
   };
 
-  // Existing question import/export logic remains unchanged
+  // Question Media Upload
   const handleQuestionMediaUpload = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -100,13 +103,14 @@ const QuestionBuilder: React.FC<Props> = ({ onCreatePost }) => {
       updated[index] = {
         ...updated[index],
         media: result,
-        mediaType: file.type.startsWith('video') ? 'video' : 'image',
+        mediaType: (file.type.startsWith('video') ? 'video' : 'image') as 'image' | 'video',
       };
       setQuestions(updated);
     };
     reader.readAsDataURL(file);
   };
 
+  // Export/Import JSON
   const exportToJSON = () => {
     const blob = new Blob([JSON.stringify(questions, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
@@ -125,9 +129,7 @@ const QuestionBuilder: React.FC<Props> = ({ onCreatePost }) => {
       const content = event.target?.result as string;
       try {
         const imported = JSON.parse(content);
-        if (Array.isArray(imported)) {
-          setQuestions(imported);
-        }
+        if (Array.isArray(imported)) setQuestions(imported);
       } catch {
         alert('Invalid JSON format.');
       }
@@ -135,6 +137,7 @@ const QuestionBuilder: React.FC<Props> = ({ onCreatePost }) => {
     reader.readAsText(file);
   };
 
+  // Export/Import CSV
   const exportToCSV = () => {
     const csvData = questions.map(q => ({
       question: q.question,
@@ -171,7 +174,7 @@ const QuestionBuilder: React.FC<Props> = ({ onCreatePost }) => {
             options: [row.option1, row.option2, row.option3, row.option4],
             correctAnswer: parseInt(row.correctAnswer, 10),
             media: row.media || '',
-            mediaType: row.mediaType === 'video' ? 'video' : 'image'
+            mediaType: (row.mediaType === 'video' ? 'video' : 'image') as 'image' | 'video'
           }));
           setQuestions(parsed);
         } catch {
@@ -208,7 +211,7 @@ const QuestionBuilder: React.FC<Props> = ({ onCreatePost }) => {
         <div className="pending-posts">
           <h3>Pending Posts</h3>
           {pendingPosts.map((p) => (
-            <div key={p.id} className="pending-post-item" style={{ border: '1px solid #ccc', padding: '0.5rem', marginBottom: '0.5rem' }}>
+            <div key={p.id} style={{ border: '1px solid #ccc', padding: '0.5rem', marginBottom: '0.5rem' }}>
               {p.content && <p>{p.content}</p>}
               {p.media && (p.media.type === 'image' ? (
                 <img src={p.media.src} alt="preview" style={{ maxWidth: '200px', display: 'block', margin: '0.5rem 0' }} />
@@ -240,9 +243,7 @@ const QuestionBuilder: React.FC<Props> = ({ onCreatePost }) => {
           <div key={index} className="question-preview">
             <p><strong>Q:</strong> {q.question}</p>
             <ul>
-              {q.options.map((opt, i) => (
-                <li key={i}>{opt}</li>
-              ))}
+              {q.options.map((opt, i) => <li key={i}>{opt}</li>)}
             </ul>
             <p><strong>Correct Answer:</strong> {q.options[q.correctAnswer]}</p>
             {q.media && (q.mediaType === 'video' ? (
