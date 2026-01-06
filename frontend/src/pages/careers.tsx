@@ -13,20 +13,20 @@ const jobOpenings: JobOpening[] = [
   {
     id: 1,
     title: 'Project Coordinator',
-    location: 'Garissa, Kenya',
+    location: 'Mombasa, Kenya',
     type: 'Full-time',
     description:
-      'Coordinate project activities, liaise with partners and beneficiaries, and ensure timely reporting.',
-    applyLink: 'mailto:hr@itepads.org?subject=Application%20for%20Project%20Coordinator',
+      'Coordinate SDG-focused projects, liaise with community leaders and beneficiaries, and ensure timely reporting on impact in coastal counties.',
+    applyLink: 'mailto:hr@sombezapwani.org?subject=Application%20for%20Project%20Coordinator',
   },
   {
     id: 2,
     title: 'Field Officer – Water & Sanitation',
-    location: 'Gedo, Somalia',
+    location: 'Kwale, Kenya',
     type: 'Full-time',
     description:
-      'Support water, sanitation, and hygiene activities in field locations, including assessments and community engagement.',
-    applyLink: 'mailto:hr@itepads.org?subject=Application%20for%20Field%20Officer',
+      'Support water, sanitation, and hygiene initiatives in coastal communities, including needs assessments, installation, and community training.',
+    applyLink: 'mailto:hr@sombezapwani.org?subject=Application%20for%20Field%20Officer',
   },
   {
     id: 3,
@@ -34,8 +34,8 @@ const jobOpenings: JobOpening[] = [
     location: 'Remote',
     type: 'Volunteer',
     description:
-      'Assist with content creation, social media, and outreach campaigns to raise awareness of ITEPADS activities.',
-    applyLink: 'mailto:volunteers@itepads.org?subject=Volunteer%20Communications%20Assistant',
+      'Assist with social media, storytelling, and outreach campaigns to raise awareness of Sombeza Pwani programs and impact.',
+    applyLink: 'mailto:volunteers@sombezapwani.org?subject=Volunteer%20Communications%20Assistant',
   },
 ];
 
@@ -44,9 +44,10 @@ const Careers: React.FC = () => {
     <main style={{ maxWidth: 900, margin: '0 auto', padding: '2rem' }}>
       <h1>Careers & Opportunities</h1>
       <p style={{ fontSize: '1.1rem', lineHeight: 1.6 }}>
-        Join ITEPADS and help us create sustainable impact in vulnerable communities.
-        We welcome passionate, skilled, and dedicated individuals to apply for open
-        positions or volunteer opportunities.
+        Join Sombeza Pwani and help us create sustainable impact along Kenya’s coast. 
+        We welcome passionate, skilled, and dedicated individuals to apply for open positions 
+        or volunteer opportunities focused on community empowerment, women and youth initiatives, 
+        and SDG-aligned projects.
       </p>
 
       <section style={{ marginTop: '2rem' }}>
@@ -93,10 +94,10 @@ const Careers: React.FC = () => {
 
       <section style={{ marginTop: '3rem', fontSize: '0.9rem', color: '#555' }}>
         <p>
-          Don't see a suitable opening? We welcome speculative applications and
-          volunteers. Please send your CV and motivation letter to{' '}
-          <a href="mailto:hr@itepads.org" style={{ color: '#0077b6' }}>
-            hr@itepads.org
+          Don't see a suitable opening? We welcome speculative applications and volunteers. 
+          Please send your CV and motivation letter to{' '}
+          <a href="mailto:hr@sombezapwani.org" style={{ color: '#0077b6' }}>
+            hr@sombezapwani.org
           </a>
           .
         </p>

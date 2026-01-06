@@ -15,6 +15,10 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
+    /* ✅ THIS IS THE FIX */
+    "allowJs": true,
+    "checkJs": false,
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,

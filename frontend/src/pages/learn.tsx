@@ -2,82 +2,68 @@ import React from "react";
 import styles from "./learn.css";
 
 const impactStats = [
-  { label: "People Reached with WASH Services", value: "Thousands" },
-  { label: "Households Supported in Livelihoods", value: "Hundreds" },
-  { label: "Water Points Constructed", value: "18 boreholes (10 non-functional)" },
+  { label: "People Reached through Community Programs", value: "Thousands" },
+  { label: "Households Supported in Livelihoods & Skills", value: "Hundreds" },
+  { label: "Water & Sanitation Facilities Constructed", value: "18 boreholes (10 non-functional)" },
   { label: "Volunteers Mobilized", value: "50+" },
-  { label: "Districts Covered", value: "Multiple (Garissa, Gedo, Dolow, Kismayo)" },
-  { label: "Training Sessions Delivered", value: "15+" },
+  { label: "Coastal Counties Covered", value: "Kilifi, Mombasa, Kwale, Lamu, Taita-Taveta" },
+  { label: "Training & Mentorship Sessions Delivered", value: "15+" },
 ];
 
 const timelineEvents = [
   {
-    date: "June 21–23, 2025",
-    title: "Clean Water Provision – Luuq (Phase 2)",
+    date: "March 2025",
+    title: "Women's Mentorship Program Launch",
     description:
-      "Implemented cholera outbreak prevention through water trucking and awareness in Luuq area and villages.",
+      "Started mentorship sessions in collaboration with Equity Bank to empower women entrepreneurs along Kenya's coast.",
+    icon: "👩‍💼",
+  },
+  {
+    date: "April 2025",
+    title: "Community Clean Water Initiative – Kilifi",
+    description:
+      "Installed water points and conducted hygiene awareness sessions benefiting local households.",
     icon: "💧",
   },
   {
-    date: "June 25, 2025",
-    title: "Jubaland Consultation Meeting – Kismayo",
+    date: "May 2025",
+    title: "Youth Skills Training Workshops",
     description:
-      "Engaged with government and humanitarian partners on improving community services and coordination.",
-    icon: "🤝",
+      "Delivered vocational and leadership training sessions for coastal youth to enhance employability and entrepreneurship.",
+    icon: "🛠️",
   },
   {
-    date: "July 7, 2025",
-    title: "FSNAU Rural Food Security Assessment Coordination – Dolow",
+    date: "June 2025",
+    title: "SDG Community Projects Rollout",
     description:
-      "Prepared for multisectoral assessment with partners to inform response planning after Gu 2025 season.",
-    icon: "📊",
+      "Implemented small-scale projects addressing health, education, and sustainable livelihoods aligned with UN SDGs.",
+    icon: "🌱",
   },
   {
-    date: "July 21, 2025",
-    title: "FSNAU Field Data Collection",
+    date: "July 2025",
+    title: "Women’s Day Celebration & Advocacy",
     description:
-      "Conducted field data gathering across target areas in coordination with partners.",
-    icon: "📝",
-  },
-  {
-    date: "July 25, 2025",
-    title: "Security Crisis & Staff Safety – Beled-Hawo",
-    description:
-      "Conflict erupted affecting staff safety and operations. Project Manager Abdikadir Arab confirmed safe but unreachable during blackout.",
-    icon: "⚠️",
-  },
-  {
-    date: "July 27, 2025",
-    title: "Conflict Escalation and Displacement – Beled-Hawo",
-    description:
-      "Renewed fighting displaced ~5,000 households (~30,000 people). Refugee camps established in Mandera.",
-    icon: "🏠",
-  },
-  {
-    date: "July 30, 2025",
-    title: "FSC National Partners Meeting (Virtual)",
-    description:
-      "Participated in cluster meeting to coordinate food security responses and share field updates.",
-    icon: "💻",
+      "Hosted events highlighting women’s achievements and promoting gender equality across the coastal communities.",
+    icon: "🎉",
   },
 ];
 
 const featuredStories = [
   {
-    title: "Rapid Response Assessment in Beled-Hawo",
+    title: "Mentorship Empowers Women Entrepreneurs",
     narrative:
-      "Following violent clashes, SOMBEZA quickly deployed teams to document displacement and damage, providing critical data for response planning.",
-    quote: "“Our priority was to understand the needs on the ground fast to help those affected.” — Abdikadir Arab, Project Manager",
-    photoAlt: "Field assessment in Beled-Hawo",
-    photoUrl: "/assets/images/assessment_photo.jpeg", // Replace with actual path
+      "Through guided mentorship, women in Kilifi and Kwale gained business skills, financial literacy, and access to support networks that strengthened their economic resilience.",
+    quote: "“Sombeza Pwani helped me turn my small business into a sustainable venture.” — Coastal Woman Entrepreneur",
+    photoAlt: "Women mentorship session",
+    photoUrl: "/assets/images/mentorship_session.jpeg",
   },
   {
-    title: "Cholera Prevention Success in Luuq",
+    title: "Clean Water Initiative Transforms Communities",
     narrative:
-      "Three-day clean water provision and hygiene awareness efforts helped hundreds of households reduce cholera risk during outbreak.",
-    quote: "“Access to clean water saved lives and restored hope.” — Community Member",
-    photoAlt: "Water trucking in Luuq",
-    photoUrl: "/assets/images/water_truck.jpeg", // Replace with actual path
+      "Installation of water points and hygiene promotion in rural areas significantly improved health outcomes and reduced waterborne diseases.",
+    quote: "“Having clean water nearby changed our lives and kept our children healthy.” — Community Member",
+    photoAlt: "Community water point",
+    photoUrl: "/assets/images/water_point.jpeg",
   },
 ];
 
@@ -86,13 +72,13 @@ const LearningImpactPage = () => {
     <main style={{ maxWidth: 900, margin: "0 auto", padding: "2rem" }}>
       {/* Intro Statement */}
       <section>
-        <h1>Learning & Impact at SOMBEZA PWANI </h1>
+        <h1>Learning & Impact at Sombeza Pwani</h1>
         <p style={{ fontSize: "1.1rem", lineHeight: 1.6 }}>
-          At SOMBEZA PWANI, every project is a learning opportunity that drives us closer
-          to sustainable change. We measure success not just by numbers, but by the
-          transformed lives and strengthened communities we serve. Our ongoing
-          engagement in sector forums and dedication to transparent,
-          evidence-based programming ensure we adapt and improve continuously.
+          At Sombeza Pwani, every initiative is an opportunity to empower coastal communities. 
+          We measure success not only in numbers but by the transformed lives, strengthened 
+          capacities, and improved opportunities for women, youth, and families. Our commitment 
+          to sustainable development, mentorship, and community-led programs ensures we adapt 
+          and improve continuously.
         </p>
       </section>
 
@@ -222,8 +208,7 @@ const LearningImpactPage = () => {
       >
         <h2>Support Our Work</h2>
         <p>
-          Join us in creating lasting change in vulnerable communities. Your support
-          empowers clean water access, health initiatives, and emergency response.
+          Help us empower women, youth, and communities along Kenya’s coast. Your contribution supports clean water, health, mentorship, and SDG-aligned community projects.
         </p>
         <a
           href="/donate"

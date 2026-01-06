@@ -4,45 +4,45 @@ import "../styles/Explore.css"; // Make sure this file includes the fade + layou
 export default function Explore() {
   // Hero slideshow images
   const images = [
-    { url: "/assets/images/image1.jpeg", description: "A beautiful landscape at sunset." },
-    { url: "/assets/images/image2.jpeg", description: "The serenity of a mountain lake." },
-    { url: "/assets/images/image3.jpeg", description: "A bustling city skyline at night." },
-    { url: "/assets/images/image4.jpeg", description: "A peaceful forest in the morning light." },
-    { url: "/assets/images/image5.jpeg", description: "A stunning beach view with clear water." },
-    { url: "/assets/images/image6.jpeg", description: "The vibrancy of a busy street market." },
-    { url: "/assets/images/image7.jpeg", description: "A close-up of nature’s details: flowers and dew." },
-    { url: "/assets/images/image8.jpeg", description: "The stillness of a calm river during dawn." },
-    { url: "/assets/images/image9.jpeg", description: "A scenic aerial view of a sprawling city." },
-    { url: "/assets/images/image10.jpeg", description: "The grandeur of a snow-capped mountain range." }
+    { url: "/assets/images/image1.jpeg", description: "Empowering coastal communities through sustainable projects." },
+    { url: "/assets/images/image2.jpeg", description: "Women leading community initiatives in Kenya's coast." },
+    { url: "/assets/images/image3.jpeg", description: "Youth engagement and mentorship programs in action." },
+    { url: "/assets/images/image4.jpeg", description: "Celebrating local achievements and community progress." },
+    { url: "/assets/images/image5.jpeg", description: "Education and skill-building initiatives for women and youth." },
+    { url: "/assets/images/image6.jpeg", description: "Promoting equality, rights, and social cohesion." },
+    { url: "/assets/images/image7.jpeg", description: "Environmental conservation and community-led sustainability projects." },
+    { url: "/assets/images/image8.jpeg", description: "Mentorship sessions with local and international partners." },
+    { url: "/assets/images/image9.jpeg", description: "Cultural events celebrating women and youth empowerment." },
+    { url: "/assets/images/image10.jpeg", description: "Fostering positive change along Kenya's coastal region." }
   ];
 
   const sectors = [
     {
-      title: "Livelihoods",
-      desc: "Agriculture support, drought resilience, farm nurseries, certified seeds and market linkages.",
-      bullets: ["Smallholder farmer support", "Climate-smart agriculture", "Micro-projects & revolving funds"]
+      title: "Community Empowerment",
+      desc: "Initiatives focused on building skills, leadership, and capacity in local communities.",
+      bullets: ["Women empowerment programs", "Youth leadership and mentorship", "Capacity building workshops"]
     },
     {
-      title: "WASH",
-      desc: "Water provision, sanitation facilities and hygiene promotion in emergency and development contexts.",
-      bullets: ["Water catchments & storage", "Latrine construction", "Hygiene promotion"]
+      title: "SDG Projects",
+      desc: "Implementing UN Sustainable Development Goals through local projects in health, education, and livelihoods.",
+      bullets: ["Sustainable livelihoods support", "Climate-resilient initiatives", "Health and education programs"]
     },
     {
-      title: "Health",
-      desc: "Community health outreach and emergency health response supporting vulnerable groups.",
-      bullets: ["Community health outreach", "Emergency response support"]
+      title: "Mentorship & Partnerships",
+      desc: "Collaborations with organizations like Equity Bank to mentor and support women and youth.",
+      bullets: ["Mentorship programs", "Partnership-driven projects", "Community engagement events"]
     },
     {
-      title: "Protection",
-      desc: "Protection programming including peacebuilding, child/youth protection and community-based committees.",
-      bullets: ["Peace & reconciliation committees", "Protection mainstreaming"]
+      title: "Advocacy & Rights",
+      desc: "Promoting equality, social justice, and human rights in coastal communities.",
+      bullets: ["Gender equality campaigns", "Rights awareness sessions", "Community advocacy programs"]
     }
   ];
 
   const coverage = [
-    "Head liaison offices: Mogadishu (Somalia), Nairobi (Kenya)",
-    "Regional offices: Belet-Hawa, Luuq, Bardera, Dollow (Gedo)",
-    "Field presence: Middle & Lower Juba, Galgaduud"
+    "Coastal Counties: Kilifi, Mombasa, Kwale, Lamu, Taita-Taveta",
+    "Community outreach: Local villages and coastal towns",
+    "Partner network: Schools, NGOs, and private sector collaborators"
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -76,7 +76,7 @@ export default function Explore() {
         ))}
 
         <div className="explore-content">
-          <h1>Explore Sombeza</h1>
+          <h1>Explore Sombeza Pwani</h1>
           <p>{images[currentImageIndex].description}</p>
         </div>
 
@@ -112,23 +112,20 @@ export default function Explore() {
           <div className="bg-white rounded-lg p-6 shadow">
             <h2 className="text-2xl font-semibold mb-3">What we do</h2>
             <p className="text-gray-700 mb-4">
-              We design and deliver community led interventions focused on agriculture, emergency response, water &
-              sanitation, climate-smart practices and social cohesion. Our approach centers community ownership,
-              inclusivity and sustainability.
+              Sombeza Pwani implements sustainable development initiatives along Kenya’s coast. We focus on empowering communities, supporting women and youth, and promoting equality and resilience through mentorship, SDG-aligned projects, and local partnerships.
             </p>
             <ul className="list-disc pl-5 text-gray-700 space-y-2">
-              <li>Emergency water provision & latrine construction</li>
-              <li>Farmer training, certified seeds & nursery establishment</li>
-              <li>Peacebuilding and protection committees at village level</li>
-              <li>Micro-projects and revolving funds for women & youth</li>
+              <li>Women and youth empowerment programs</li>
+              <li>Community-led SDG projects in health, education, and livelihoods</li>
+              <li>Mentorship and partnership initiatives with organizations like Equity Bank</li>
+              <li>Advocacy for gender equality and community rights</li>
             </ul>
           </div>
 
           <div className="bg-white rounded-lg p-6 shadow">
             <h2 className="text-2xl font-semibold mb-3">Coverage</h2>
             <p className="text-gray-700 mb-4">
-              Our operational footprint spans key districts in Gedo, Middle & Lower Juba and Galgaduud in Somalia and
-              we maintain liaison support in Nairobi, Kenya.
+              Our work spans key coastal counties in Kenya, engaging with local communities, schools, and partner organizations to foster sustainable development and social progress.
             </p>
             <ul className="list-inside space-y-2 text-gray-700">
               {coverage.map((c, i) => (
@@ -138,9 +135,8 @@ export default function Explore() {
 
             <div className="mt-6">
               <h3 className="font-medium">Quick contacts</h3>
-              <p className="text-sm text-gray-600">Phone (Somalia): +252 618 681 107</p>
               <p className="text-sm text-gray-600">Phone (Kenya): +254 722 303 366</p>
-              <p className="text-sm text-gray-600">Email: info@itepads.com</p>
+              <p className="text-sm text-gray-600">Email: info@sombezapwani.org</p>
             </div>
           </div>
         </section>
@@ -167,8 +163,7 @@ export default function Explore() {
         <section className="mb-10 bg-gray-50 rounded-lg p-6">
           <h2 className="text-2xl font-semibold mb-3">Get Involved</h2>
           <p className="text-gray-700">
-            We are building momentum toward new projects starting 2026. Right now the team is voluntary — your support
-            will help revive our visibility and re-start operations. Ways to support:
+            Join us in empowering coastal communities. Support our projects, volunteer your time, or partner with us to help advance sustainable development along Kenya’s coast.
           </p>
           <div className="mt-4 flex flex-col sm:flex-row gap-3">
             <a className="px-4 py-2 bg-green-600 text-white rounded" href="#volunteer">
@@ -201,12 +196,9 @@ export default function Explore() {
 
           <div className="bg-white rounded-lg p-6 shadow">
             <h2 className="text-xl font-semibold mb-3">Map & Presence</h2>
-            <p className="text-gray-600 mb-4">
-              (Placeholder) — Replace with an embedded map (Leaflet or Google Maps) showing office locations and field
-              sites.
-            </p>
+            
             <div className="h-56 bg-gray-200 rounded flex items-center justify-center text-gray-500">
-              Map placeholder
+              Location
             </div>
           </div>
         </section>
@@ -214,9 +206,9 @@ export default function Explore() {
         {/* Footer */}
         <footer className="py-6 border-t mt-8 text-center text-gray-600">
           <p className="mb-2">
-            ITEPADS — Working towards a just society. &nbsp;|&nbsp; Registered in Jubaland State & Federal Somalia
+            Sombeza Pwani Advancing sustainable development & community empowerment along Kenya’s coast. 
           </p>
-          <p>Follow us: @ITEPADS @ITEPADSNGO</p>
+          <p>Follow us: @SombezaPwani @SombezaPwaniNGO</p>
         </footer>
       </div>
     </div>
