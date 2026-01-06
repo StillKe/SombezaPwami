@@ -15,7 +15,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
-    /* ✅ THIS IS THE FIX */
+    /* ✅ Allow JSX files without breaking TS */
     "allowJs": true,
     "checkJs": false,
 
